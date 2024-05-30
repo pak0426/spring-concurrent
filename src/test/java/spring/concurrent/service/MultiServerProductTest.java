@@ -1,8 +1,10 @@
 package spring.concurrent.service;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import spring.concurrent.domain.Product;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -16,6 +18,8 @@ public class MultiServerProductTest {
         RestTemplate restTemplate = new RestTemplate();
         ExecutorService executorService = Executors.newFixedThreadPool(40);
         CountDownLatch latch = new CountDownLatch(threadCount);
+
+        restTemplate.getForObject("http://localhost:8080/products", Void.class);
 
         // when
         for (int i = 0; i < threadCount; i++) {
@@ -39,6 +43,7 @@ public class MultiServerProductTest {
         RestTemplate restTemplate = new RestTemplate();
         ExecutorService executorService = Executors.newFixedThreadPool(40);
         CountDownLatch latch = new CountDownLatch(threadCount);
+
 
         // when
         for (int i = 0; i < threadCount; i++) {
