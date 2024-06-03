@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import spring.concurrent.domain.Product;
 import spring.concurrent.domain.ProductRepository;
+import spring.concurrent.service.OptimisticLockFacade;
 import spring.concurrent.service.OptimisticLockService;
 import spring.concurrent.service.PessimisticLockService;
 import spring.concurrent.service.ProductService;
@@ -19,7 +20,7 @@ public class ProductController {
     private final ProductRepository productRepository;
 
     private final PessimisticLockService pessimisticLockService;
-    private final OptimisticLockService optimisticLockService;
+    private final OptimisticLockFacade optimisticLockFacade;
 
     @GetMapping("/products")
     public void createProduct() {
@@ -33,6 +34,6 @@ public class ProductController {
 
     @GetMapping("/products/{id}/decrease")
     public void decreaseProduct(@PathVariable Long id) {
-        optimisticLockService.decrease(id);
+        optimisticLockFacade.decrease(id);
     }
 }
