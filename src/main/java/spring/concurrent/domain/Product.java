@@ -16,9 +16,6 @@ public class Product {
 
     private int quantity;
 
-    @Version
-    private int version;
-
     public Product(Long id, int quantity) {
         this.id = id;
         this.quantity = quantity;
