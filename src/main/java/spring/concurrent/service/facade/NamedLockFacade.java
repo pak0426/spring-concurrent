@@ -1,9 +1,10 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import spring.concurrent.domain.LockRepository;
+import spring.concurrent.service.ProductService;
 
 @Service
 @RequiredArgsConstructor

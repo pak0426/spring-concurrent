@@ -1,7 +1,8 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import spring.concurrent.service.ProductService;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -10,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 @RequiredArgsConstructor
-public class LockProductFacadeService {
+public class LockFacade {
 
     private ConcurrentHashMap<String, Lock> locks = new ConcurrentHashMap<>();
 

@@ -1,17 +1,13 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.integration.support.locks.LockRegistry;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import spring.concurrent.service.ProductService;
 
 @Service
 @RequiredArgsConstructor
-public class LockRegistryProductFacadeService {
+public class LockRegistryFacade {
 
     private final LockRegistry lockRegistry;
     private final ProductService productService;

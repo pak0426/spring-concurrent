@@ -1,8 +1,9 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.hibernate.StaleObjectStateException;
 import org.springframework.stereotype.Service;
+import spring.concurrent.service.OptimisticLockService;
 
 @Service
 @RequiredArgsConstructor

@@ -1,8 +1,5 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.LockModeType;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +11,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class OptimisticLockFacadeTest {

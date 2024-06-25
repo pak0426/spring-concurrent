@@ -1,4 +1,4 @@
-package spring.concurrent.service;
+package spring.concurrent.service.facade;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,9 +15,9 @@ import java.util.concurrent.Executors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class LockProductFacadeServiceTest {
+class LockFacadeTest {
     @Autowired
-    private LockProductFacadeService lockProductFacadeService;
+    private LockFacade lockFacade;
 
     @Autowired
     private ProductRepository productRepository;
@@ -46,7 +46,7 @@ class LockProductFacadeServiceTest {
         for (int i = 0; i < threadCount; i++) {
             executorService.submit(() -> {
                 try {
-                    lockProductFacadeService.decrease(productId);
+                    lockFacade.decrease(productId);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 } finally {
