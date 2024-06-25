@@ -26,6 +26,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.integration:spring-integration-core'
     implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
